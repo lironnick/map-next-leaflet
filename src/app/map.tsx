@@ -19,6 +19,7 @@ import {
   useMap,
   Popup,
 } from 'react-leaflet';
+import { env } from 'process';
 
 export function ChangeView({ coords }) {
   const map = useMap();
@@ -149,7 +150,7 @@ export default function Map() {
         <TileLayer
           //   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           //   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          url={`https://api.mapbox.com/styles/v1/lironnick/cllea48jt01kq01p4189dfn9q/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibGlyb25uaWNrIiwiYSI6ImNsbGUzbDYzcDBldm0zZWw2ejU2cjk2bWYifQ.ta74HS6F6fNhcqOQHxv6JA`}
+          url={`https://api.mapbox.com/styles/v1/${env.USERNAME}/${env.CLIENTE_ID}/tiles/256/{z}/{x}/{y}@2x?access_token=${env.REACT_APP_ACCESS_TOKEN_MAP_BOX}`}
           attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
         />
         {location.lat && location.lng && (
