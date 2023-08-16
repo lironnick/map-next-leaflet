@@ -1,9 +1,10 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono',
+    'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace',
+    'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New',
+    monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -46,7 +47,10 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    --primary-glow: radial-gradient(
+      rgba(1, 65, 255, 0.4),
+      rgba(1, 65, 255, 0)
+    );
     --secondary-glow: linear-gradient(
       to bottom right,
       rgba(1, 65, 255, 0),
@@ -104,4 +108,92 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+#page-map {
+  width: 100vw;
+  height: 100vh;
+}
+
+form.landing-page-form {
+  width: 500px;
+
+  padding: 0px 18px;
+
+  position: absolute;
+  top: 30px;
+  left: 40px;
+
+  max-height: calc(100% - 24px);
+
+  z-index: 1;
+}
+
+#page-map .leaflet-container {
+  z-index: 0;
+}
+
+/* Pop Up - Marker */
+
+#page-map .map-popup .leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+#page-map .map-popup .leaflet-popup-content h3 {
+  color: #0089a5;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 12px;
+}
+
+#page-map .map-popup .leaflet-popup-content p {
+  color: #042f38;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 8px 12px;
+  line-height: 15px;
+}
+
+#page-map .map-popup .leaflet-popup-tip-container {
+  display: none;
+}
+
+/* Styling react select */
+
+.filter__control {
+  border-radius: 20px !important;
+
+  width: 100% !important;
+  background: #fff !important;
+  border: 1px solid #d3e2e5 !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+  box-shadow: none;
+
+  /* outline: none !important; */
+  /* color: #5c8599 !important; */
+}
+
+.filter__control:hover {
+  outline: none;
+}
+
+.filter__control:focus {
+  outline: none;
+}
+
+.filter__control:active {
+  outline: none;
+}
+
+.filter__option {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.filter__option--is-focused {
+  /* background: #d3e2e5 !important;
+  color: #010101 !important; */
 }
